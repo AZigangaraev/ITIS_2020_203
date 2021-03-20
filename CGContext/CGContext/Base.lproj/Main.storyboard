@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CGContext" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text level numbers" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BLq-ND-gwh">
+                                <rect key="frame" x="96" y="74" width="222" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="222" id="tEd-MQ-KyK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxv-sQ-KcS">
+                                <rect key="frame" x="184" y="131" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8kh-9x-WLX"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="y0g-0I-dyN"/>
+                                </constraints>
+                                <state key="normal" title="Draw"/>
+                                <connections>
+                                    <action selector="drawAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YqD-L7-cjF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BLq-ND-gwh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="16T-EE-9F7"/>
+                            <constraint firstItem="wxv-sQ-KcS" firstAttribute="centerX" secondItem="BLq-ND-gwh" secondAttribute="centerX" id="6Qh-Nb-47j"/>
+                            <constraint firstItem="wxv-sQ-KcS" firstAttribute="top" secondItem="BLq-ND-gwh" secondAttribute="bottom" constant="23" id="ZyW-eT-e7d"/>
+                            <constraint firstItem="BLq-ND-gwh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="heH-Hl-U0w"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="drawButton" destination="wxv-sQ-KcS" id="B3Q-3d-K0X"/>
+                        <outlet property="layersTextField" destination="BLq-ND-gwh" id="UE7-6c-ypX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="75.669642857142847"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
