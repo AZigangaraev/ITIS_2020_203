@@ -13,6 +13,11 @@
 		235501492601025C00A9E481 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235501472601025C00A9E481 /* Main.storyboard */; };
 		2355014B2601025E00A9E481 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2355014A2601025E00A9E481 /* Assets.xcassets */; };
 		2355014E2601025E00A9E481 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2355014C2601025E00A9E481 /* LaunchScreen.storyboard */; };
+		EADD0337260635C900166A5A /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADD0336260635C900166A5A /* CustomView.swift */; };
+		EADD033A2606360C00166A5A /* CustomViewWithImageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADD03392606360C00166A5A /* CustomViewWithImageContext.swift */; };
+		EADD033E2606363000166A5A /* TailedBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADD033D2606363000166A5A /* TailedBubbleView.swift */; };
+		EADD03432606366E00166A5A /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADD03422606366E00166A5A /* TriangleView.swift */; };
+		EADD03482606399500166A5A /* TriforceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADD03472606399500166A5A /* TriforceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		2355014A2601025E00A9E481 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2355014D2601025E00A9E481 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2355014F2601025E00A9E481 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EADD0336260635C900166A5A /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		EADD03392606360C00166A5A /* CustomViewWithImageContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewWithImageContext.swift; sourceTree = "<group>"; };
+		EADD033D2606363000166A5A /* TailedBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TailedBubbleView.swift; sourceTree = "<group>"; };
+		EADD03422606366E00166A5A /* TriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
+		EADD03472606399500166A5A /* TriforceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriforceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +69,25 @@
 				235501412601025C00A9E481 /* AppDelegate.swift */,
 				235501432601025C00A9E481 /* SceneDelegate.swift */,
 				235501452601025C00A9E481 /* ViewController.swift */,
+				EADD03452606368A00166A5A /* Views */,
 				235501472601025C00A9E481 /* Main.storyboard */,
 				2355014A2601025E00A9E481 /* Assets.xcassets */,
 				2355014C2601025E00A9E481 /* LaunchScreen.storyboard */,
 				2355014F2601025E00A9E481 /* Info.plist */,
 			);
 			path = CGApp;
+			sourceTree = "<group>";
+		};
+		EADD03452606368A00166A5A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EADD0336260635C900166A5A /* CustomView.swift */,
+				EADD03392606360C00166A5A /* CustomViewWithImageContext.swift */,
+				EADD033D2606363000166A5A /* TailedBubbleView.swift */,
+				EADD03422606366E00166A5A /* TriangleView.swift */,
+				EADD03472606399500166A5A /* TriforceView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +160,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EADD03432606366E00166A5A /* TriangleView.swift in Sources */,
 				235501462601025C00A9E481 /* ViewController.swift in Sources */,
+				EADD033E2606363000166A5A /* TailedBubbleView.swift in Sources */,
+				EADD0337260635C900166A5A /* CustomView.swift in Sources */,
 				235501422601025C00A9E481 /* AppDelegate.swift in Sources */,
 				235501442601025C00A9E481 /* SceneDelegate.swift in Sources */,
+				EADD03482606399500166A5A /* TriforceView.swift in Sources */,
+				EADD033A2606360C00166A5A /* CustomViewWithImageContext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
