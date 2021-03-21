@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED6AE3152607CF70003D42A4 /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6AE3142607CF70003D42A4 /* TriangleView.swift */; };
 		EDD7384426061AD200DDA2A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD7384326061AD200DDA2A0 /* AppDelegate.swift */; };
 		EDD7384626061AD200DDA2A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD7384526061AD200DDA2A0 /* SceneDelegate.swift */; };
 		EDD7384826061AD200DDA2A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD7384726061AD200DDA2A0 /* ViewController.swift */; };
 		EDD7384B26061AD200DDA2A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD7384926061AD200DDA2A0 /* Main.storyboard */; };
 		EDD7384D26061AD500DDA2A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDD7384C26061AD500DDA2A0 /* Assets.xcassets */; };
 		EDD7385026061AD500DDA2A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD7384E26061AD500DDA2A0 /* LaunchScreen.storyboard */; };
-		EDD7385926061AF700DDA2A0 /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD7385826061AF700DDA2A0 /* TriangleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED6AE3142607CF70003D42A4 /* TriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
 		EDD7384026061AD200DDA2A0 /* Triforce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Triforce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD7384326061AD200DDA2A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDD7384526061AD200DDA2A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -25,7 +26,6 @@
 		EDD7384C26061AD500DDA2A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDD7384F26061AD500DDA2A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDD7385126061AD500DDA2A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDD7385826061AF700DDA2A0 /* TriangleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TriangleView.swift; path = ../../TriforceApp/TriforceApp/TriangleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 				EDD7384C26061AD500DDA2A0 /* Assets.xcassets */,
 				EDD7384E26061AD500DDA2A0 /* LaunchScreen.storyboard */,
 				EDD7385126061AD500DDA2A0 /* Info.plist */,
-				EDD7385826061AF700DDA2A0 /* TriangleView.swift */,
+				ED6AE3142607CF70003D42A4 /* TriangleView.swift */,
 			);
 			path = Triforce;
 			sourceTree = "<group>";
@@ -142,7 +142,7 @@
 			files = (
 				EDD7384826061AD200DDA2A0 /* ViewController.swift in Sources */,
 				EDD7384426061AD200DDA2A0 /* AppDelegate.swift in Sources */,
-				EDD7385926061AF700DDA2A0 /* TriangleView.swift in Sources */,
+				ED6AE3152607CF70003D42A4 /* TriangleView.swift in Sources */,
 				EDD7384626061AD200DDA2A0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
