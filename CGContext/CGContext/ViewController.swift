@@ -31,11 +31,13 @@ class ViewController: UIViewController {
         if layersTextField.text != nil {
             mainView.removeFromSuperview()
             mainView = UIView(frame: CGRect(x: view.bounds.width / 2 - 100, y: view.bounds.height / 2 - 100, width: 200, height: 200))
+            mainView.backgroundColor = .init(red: 255.0/255.0, green: 254.0/255.0, blue: 194.0/255.0, alpha: 1)
+            mainView.layer.borderColor = .init(red: 0, green: 0, blue: 0, alpha: 1)
+            mainView.layer.borderWidth = 1
             view.addSubview(mainView)
-            mainView.backgroundColor = UIColor.clear
             levels = Int(layersTextField.text!)!
             firstTriangle = CustomVIew(frame: CGRect(
-                                        x: 0,
+                                        x: 0 + (mainView.bounds.width / 2 - mainView.bounds.width / CGFloat((levels) * 2)),
                                         y: 0,
                                         width: mainView.bounds.width/CGFloat(levels),
                                         height: mainView.bounds.height/CGFloat(levels)))

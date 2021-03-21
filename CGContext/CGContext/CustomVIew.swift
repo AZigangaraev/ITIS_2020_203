@@ -32,7 +32,6 @@ class CustomVIew: UIView {
 
         let firstX: CGFloat = 1
         let secondX: CGFloat = 0.5
-        let triangleLayer = CAShapeLayer()
         let path = UIBezierPath()
         path.move(to: CGPoint(x: 0, y: rect.height))
         path.addLine(to: CGPoint(x: rect.width * firstX, y: rect.height))
@@ -42,10 +41,6 @@ class CustomVIew: UIView {
         context.setStrokeColor(UIColor.black.cgColor)
         context.setLineWidth(1.5)
         context.restoreGState()
-
-        triangleLayer.path = path.cgPath
-        self.layer.mask = triangleLayer.mask
-
 
     }
 }
