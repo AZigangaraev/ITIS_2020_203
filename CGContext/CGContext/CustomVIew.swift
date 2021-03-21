@@ -30,11 +30,13 @@ class CustomVIew: UIView {
         guard let context = UIGraphicsGetCurrentContext() else { return }
         context.saveGState()
 
+        let firstX: CGFloat = 1
+        let secondX: CGFloat = 0.5
         let triangleLayer = CAShapeLayer()
         let path = UIBezierPath()
-        path.move(to: CGPoint(x: 0, y: 40))
-        path.addLine(to: CGPoint(x: 40, y: 40))
-        path.addLine(to: CGPoint(x: 20, y: 0))
+        path.move(to: CGPoint(x: 0, y: rect.height))
+        path.addLine(to: CGPoint(x: rect.width * firstX, y: rect.height))
+        path.addLine(to: CGPoint(x: rect.width * secondX, y: 0))
         path.close()
         path.fill()
         context.setStrokeColor(UIColor.black.cgColor)

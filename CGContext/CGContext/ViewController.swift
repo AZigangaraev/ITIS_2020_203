@@ -23,47 +23,51 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        mainView = UIView(frame: CGRect(x: 0, y: 250, width: view.bounds.width, height: view.bounds.width))
+        mainView = UIView(frame: CGRect(x: 0, y: 250, width: 200, height: 200))
 
     }
 
     @IBAction func drawAction(_ sender: Any) {
         if layersTextField.text != nil {
             mainView.removeFromSuperview()
-            mainView = UIView(frame: CGRect(x: 0, y: 250, width: view.bounds.width, height: view.bounds.width))
+            mainView = UIView(frame: CGRect(x: view.bounds.width / 2 - 100, y: view.bounds.height / 2 - 100, width: 200, height: 200))
             view.addSubview(mainView)
             mainView.backgroundColor = UIColor.clear
-            firstTriangle = CustomVIew(frame: CGRect(x: view.bounds.width/2 - 20, y: 0, width: 40, height: 40))
-            mainView.addSubview(firstTriangle)
             levels = Int(layersTextField.text!)!
+            firstTriangle = CustomVIew(frame: CGRect(
+                                        x: 0,
+                                        y: 0,
+                                        width: mainView.bounds.width/CGFloat(levels),
+                                        height: mainView.bounds.height/CGFloat(levels)))
+            mainView.addSubview(firstTriangle)
             drawTriangle(level: levels)
         }
     }
 
     func drawTriangle(level: Int) {
+        guard level != 1 else { return }
 
-        if level == 1 {
-            firstTriangle = CustomVIew(frame: CGRect(x: view.bounds.width/2 - 20, y: 0, width: 40, height: 40))
-            mainView.addSubview(firstTriangle)
-        } else {
         for i in 1...level-1 {
-            let newView = CustomVIew(frame: CGRect(x: firstTriangle.frame.minX - CGFloat(i * 20), y: firstTriangle.frame.minY + CGFloat(i * 40), width: 40, height: 40))
+            let newView = CustomVIew(frame: CGRect(
+                                        x: firstTriangle.frame.minX - CGFloat(CGFloat(i) * mainView.bounds.width/CGFloat(levels)/2),
+                                        y: firstTriangle.frame.minY + CGFloat(CGFloat(i) * mainView.bounds.height/CGFloat(levels)),
+                                        width: mainView.bounds.width/CGFloat(levels),
+                                        height: mainView.bounds.height/CGFloat(levels)))
             mainView.addSubview(newView)
             var count = i
             var maxX = newView.frame.maxX
             var minY = newView.frame.minY
             while count != 0 {
-                let nextView = CustomVIew(frame: CGRect(x: maxX, y: minY, width: 40, height: 40))
+                let nextView = CustomVIew(frame: CGRect(
+                                            x: maxX,
+                                            y: minY,
+                                            width: mainView.bounds.width/CGFloat(levels),
+                                            height: mainView.bounds.height/CGFloat(levels)))
                 maxX = nextView.frame.maxX
                 minY = nextView.frame.minY
                 mainView.addSubview(nextView)
                 count -= 1
-
-                }
             }
         }
     }
-
-
 }
-
