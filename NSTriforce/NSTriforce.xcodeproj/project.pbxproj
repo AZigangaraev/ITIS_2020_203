@@ -1,0 +1,352 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A170A29B2605342C002E03A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A170A29A2605342C002E03A3 /* AppDelegate.swift */; };
+		A170A29D2605342C002E03A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A170A29C2605342C002E03A3 /* SceneDelegate.swift */; };
+		A170A29F2605342C002E03A3 /* TriforceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A170A29E2605342C002E03A3 /* TriforceViewController.swift */; };
+		A170A2A22605342C002E03A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A170A2A02605342C002E03A3 /* Main.storyboard */; };
+		A170A2A42605342E002E03A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A170A2A32605342E002E03A3 /* Assets.xcassets */; };
+		A170A2A72605342E002E03A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A170A2A52605342E002E03A3 /* LaunchScreen.storyboard */; };
+		A170A2B126053458002E03A3 /* TriforceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A170A2B026053458002E03A3 /* TriforceView.swift */; };
+		A1E4B54226061D8A0011FBD1 /* HomeScrennViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E4B54126061D8A0011FBD1 /* HomeScrennViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A170A2972605342C002E03A3 /* NSTriforce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSTriforce.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A170A29A2605342C002E03A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A170A29C2605342C002E03A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A170A29E2605342C002E03A3 /* TriforceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriforceViewController.swift; sourceTree = "<group>"; };
+		A170A2A12605342C002E03A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A170A2A32605342E002E03A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A170A2A62605342E002E03A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A170A2A82605342E002E03A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A170A2B026053458002E03A3 /* TriforceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriforceView.swift; sourceTree = "<group>"; };
+		A1E4B54126061D8A0011FBD1 /* HomeScrennViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScrennViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A170A2942605342C002E03A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A170A28E2605342C002E03A3 = {
+			isa = PBXGroup;
+			children = (
+				A170A2992605342C002E03A3 /* NSTriforce */,
+				A170A2982605342C002E03A3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A170A2982605342C002E03A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A170A2972605342C002E03A3 /* NSTriforce.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A170A2992605342C002E03A3 /* NSTriforce */ = {
+			isa = PBXGroup;
+			children = (
+				A170A29A2605342C002E03A3 /* AppDelegate.swift */,
+				A170A29C2605342C002E03A3 /* SceneDelegate.swift */,
+				A170A29E2605342C002E03A3 /* TriforceViewController.swift */,
+				A1E4B54126061D8A0011FBD1 /* HomeScrennViewController.swift */,
+				A170A2A02605342C002E03A3 /* Main.storyboard */,
+				A170A2A32605342E002E03A3 /* Assets.xcassets */,
+				A170A2A52605342E002E03A3 /* LaunchScreen.storyboard */,
+				A170A2A82605342E002E03A3 /* Info.plist */,
+				A170A2B026053458002E03A3 /* TriforceView.swift */,
+			);
+			path = NSTriforce;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A170A2962605342C002E03A3 /* NSTriforce */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A170A2AB2605342E002E03A3 /* Build configuration list for PBXNativeTarget "NSTriforce" */;
+			buildPhases = (
+				A170A2932605342C002E03A3 /* Sources */,
+				A170A2942605342C002E03A3 /* Frameworks */,
+				A170A2952605342C002E03A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NSTriforce;
+			productName = NSTriforce;
+			productReference = A170A2972605342C002E03A3 /* NSTriforce.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A170A28F2605342C002E03A3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					A170A2962605342C002E03A3 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = A170A2922605342C002E03A3 /* Build configuration list for PBXProject "NSTriforce" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A170A28E2605342C002E03A3;
+			productRefGroup = A170A2982605342C002E03A3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A170A2962605342C002E03A3 /* NSTriforce */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A170A2952605342C002E03A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A170A2A72605342E002E03A3 /* LaunchScreen.storyboard in Resources */,
+				A170A2A42605342E002E03A3 /* Assets.xcassets in Resources */,
+				A170A2A22605342C002E03A3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A170A2932605342C002E03A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1E4B54226061D8A0011FBD1 /* HomeScrennViewController.swift in Sources */,
+				A170A29F2605342C002E03A3 /* TriforceViewController.swift in Sources */,
+				A170A29B2605342C002E03A3 /* AppDelegate.swift in Sources */,
+				A170A29D2605342C002E03A3 /* SceneDelegate.swift in Sources */,
+				A170A2B126053458002E03A3 /* TriforceView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A170A2A02605342C002E03A3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A170A2A12605342C002E03A3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A170A2A52605342E002E03A3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A170A2A62605342E002E03A3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A170A2A92605342E002E03A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A170A2AA2605342E002E03A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A170A2AC2605342E002E03A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NSTriforce/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.itis.ios.NSTriforce;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A170A2AD2605342E002E03A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NSTriforce/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.itis.ios.NSTriforce;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A170A2922605342C002E03A3 /* Build configuration list for PBXProject "NSTriforce" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A170A2A92605342E002E03A3 /* Debug */,
+				A170A2AA2605342E002E03A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A170A2AB2605342E002E03A3 /* Build configuration list for PBXNativeTarget "NSTriforce" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A170A2AC2605342E002E03A3 /* Debug */,
+				A170A2AD2605342E002E03A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A170A28F2605342C002E03A3 /* Project object */;
+}
