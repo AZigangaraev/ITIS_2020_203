@@ -43,7 +43,7 @@ class TreeForceViewController: UIViewController {
 		let sizeTriangle = size / CGFloat(treeForceNumber)
 //		let sizeTriangle = 2 * heightTriangle * tan(Double.pi/6)
 		for i in 1...treeForceNumber {
-			var x = ((Double(size) / 2) - Double((i - 1) * Int(sizeTriangle) / 2))
+			var x = ((Double(size) / 2) - (Double(i - 1) * Double(sizeTriangle) / 2))
 			for _ in 1...i {
 				bezierPath.move(to: CGPoint(x: x, y: Double((i - 1)) * Double(sizeTriangle)))
 				bezierPath.addLine(to: CGPoint(x: x - (Double(sizeTriangle) / 2), y: Double(i) * Double(sizeTriangle)))

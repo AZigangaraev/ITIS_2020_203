@@ -18,7 +18,7 @@ class ViewControllerModel {
 		if stringNumber.isEmpty { return .failure(ValidateError.emptyField) }
 
 		if let number = Int(stringNumber) {
-			if number > 0 && number < 101 {
+			if number > 0 && number < 1001 {
 				return .success(number)
 			} else {
 				return .failure(ValidateError.notCorrectNumber)
