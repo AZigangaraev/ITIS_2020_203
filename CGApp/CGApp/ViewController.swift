@@ -7,6 +7,11 @@
 
 import UIKit
 
+struct Pixel {
+    let pixel: UInt32
+
+}
+
 class TriangleView: UIView {
     let levels: Int
 
@@ -111,7 +116,7 @@ class TriangleView: UIView {
     }
 }
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     private var topTriangleView: TriangleView?
     private var bottomTriangleView: TriangleView?
@@ -133,23 +138,48 @@ class ViewController: UIViewController {
         mySlider.addTarget(self, action: #selector(self.sliderValueDidChange(_:)), for: .valueChanged)
         mySlider.center = self.view.center
 
+        let textfield = UITextField(frame: CGRect(x: 0, y: 0, width: 300, height: 20))
+        textfield.addTarget(self, action: #selector(self.textDidChange(_:)), for: .editingChanged)
+        textfield.center = CGPoint(x: self.view.center.x, y: self.view.center.y + 40)
+        textfield.backgroundColor = .lightGray
+        textfield.borderStyle = .roundedRect
+        textfield.delegate = self
+
         if let topView = self.topTriangleView, let bottomView = self.bottomTriangleView {
             view.addSubview(topView)
             view.addSubview(bottomView)
             view.addSubview(mySlider)
+            view.addSubview(textfield)
         } else {
             fatalError("Failed to initiate views")
         }
     }
 
-    @objc func sliderValueDidChange(_ sender: UISlider!) {
+    @objc func sliderValueDidChange(_ sender: UISlider) {
         let roundedStepValue = round(sender.value)
         sender.value = roundedStepValue
 
+        self.recreateBottomTriangleView(level: Int(roundedStepValue))
+    }
+
+    @objc func textDidChange(_ sender: UITextField) {
+        guard let text = sender.text else {
+            return
+        }
+        
+        self.recreateBottomTriangleView(level: Int(text) ?? 1)
+    }
+    
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    func recreateBottomTriangleView(level: Int) {
         bottomTriangleView?.suicide()
 
         let bottomFrame = TriangleView.bottomCenter(frame: self.view.frame)
-        self.bottomTriangleView = TriangleView(frame: bottomFrame, levels: Int(roundedStepValue))
+        self.bottomTriangleView = TriangleView(frame: bottomFrame, levels: level)
         view.addSubview(self.bottomTriangleView!)
     }
 
