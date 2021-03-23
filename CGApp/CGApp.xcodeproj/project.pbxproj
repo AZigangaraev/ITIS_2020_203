@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A9A332F2609052E0062751E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A332E2609052E0062751E /* HomeViewController.swift */; };
 		235501422601025C00A9E481 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235501412601025C00A9E481 /* AppDelegate.swift */; };
 		235501442601025C00A9E481 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235501432601025C00A9E481 /* SceneDelegate.swift */; };
 		235501462601025C00A9E481 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235501452601025C00A9E481 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A9A332E2609052E0062751E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2355013E2601025C00A9E481 /* CGApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CGApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		235501412601025C00A9E481 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		235501432601025C00A9E481 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				2355014A2601025E00A9E481 /* Assets.xcassets */,
 				2355014C2601025E00A9E481 /* LaunchScreen.storyboard */,
 				2355014F2601025E00A9E481 /* Info.plist */,
+				0A9A332E2609052E0062751E /* HomeViewController.swift */,
 			);
 			path = CGApp;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 				235501462601025C00A9E481 /* ViewController.swift in Sources */,
 				235501422601025C00A9E481 /* AppDelegate.swift in Sources */,
 				235501442601025C00A9E481 /* SceneDelegate.swift in Sources */,
+				0A9A332F2609052E0062751E /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,13 +291,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J62PVJ69GK;
+				DEVELOPMENT_TEAM = X6H8YWVCJ7;
 				INFOPLIST_FILE = CGApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = azigangaraev.github.io.CGApp;
+				PRODUCT_BUNDLE_IDENTIFIER = rustem.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -306,13 +310,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J62PVJ69GK;
+				DEVELOPMENT_TEAM = X6H8YWVCJ7;
 				INFOPLIST_FILE = CGApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = azigangaraev.github.io.CGApp;
+				PRODUCT_BUNDLE_IDENTIFIER = rustem.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
