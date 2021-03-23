@@ -11,13 +11,13 @@ class CustomView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        setup()
+  
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
 
-        setup()
+   
     }
 
     private func setup() {
@@ -25,16 +25,7 @@ class CustomView: UIView {
     }
 
     override func draw(_ rect: CGRect) {
-        guard let context = UIGraphicsGetCurrentContext() else { return }
 
-        // (50;50), (100;100), (50;100)
-        context.move(to: CGPoint(x: 50, y: 50))
-        context.setStrokeColor(UIColor.black.cgColor)
-        context.setLineWidth(5)
-        context.addLine(to: CGPoint(x: 100, y: 100))
-        context.addLine(to: CGPoint(x: 50, y: 100))
-        context.closePath()
-        context.strokePath()
     }
 }
 
@@ -42,13 +33,11 @@ class CustomViewWithImageContext: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        setup()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
 
-        setup()
     }
 
     private func setup() {
@@ -80,13 +69,11 @@ class TailedBubbleView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        setup()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
 
-        setup()
     }
 
     private func setup() {
@@ -145,83 +132,107 @@ class TailedBubbleView: UIView {
 }
 
 class TriangleView: UIView {
+    var count = 5
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        setup()
+//        setup()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
 
-        setup()
+//        setup()
     }
 
-    private func setup() {
-        backgroundColor = .yellow
-
-        let bezierPath = UIBezierPath()
-        bezierPath.usesEvenOddFillRule = true
-        // (50;50), (100;100), (50;100)
-        bezierPath.move(to: CGPoint(x: 50, y: 50))
-        bezierPath.addLine(to: CGPoint(x: 100, y: 100))
-        bezierPath.addLine(to: CGPoint(x: 50, y: 100))
-        bezierPath.close()
-
-        let circlePath = UIBezierPath(ovalIn: CGRect(x: 50, y: 75, width: 25, height: 25))
-        bezierPath.append(circlePath.reversing())
-
-        let cgPath = bezierPath.cgPath
+     func setup(with count: Int) {
+        let path = UIBezierPath()
+        let x = 20
+        let y = 20
+        var t = 0
+        var j = 0
+        var k = 0
+        var i = 1
+        // first version
+//        var z = 0
+//        var l = 0
+//        while t < count {
+//            path.move(to: CGPoint(x: x * t, y: 400 - y))
+//            path.addLine(to: CGPoint(x: 10 + x * t, y: 380 - y))
+//            path.addLine(to: CGPoint(x: 20 + x * t, y: 400 - y))
+//            path.close()
+//            t += 1
+//        }
+//
+//        while j < count - 1 {
+//            path.move(to: CGPoint(x: 10 + x * j, y: 380 - y))
+//            path.addLine(to: CGPoint(x: 20 + x * j, y: 360 - y))
+//            path.addLine(to: CGPoint(x: 30 + x * j, y: 380 - y))
+//            path.close()
+//            j += 1
+//        }
+//
+//        while k < count - 2 {
+//            path.move(to: CGPoint(x: 20 + x * k, y: 360 - y))
+//            path.addLine(to: CGPoint(x: 30 + x * k, y: 340 - y))
+//            path.addLine(to: CGPoint(x: 40 + x * k, y: 360 - y))
+//            path.close()
+//            k += 1
+//        }
+//
+//        while z < count - 3 {
+//            path.move(to: CGPoint(x: 30 + x * z, y: 340 - y))
+//            path.addLine(to: CGPoint(x: 40 + x * z, y: 320 - y))
+//            path.addLine(to: CGPoint(x: 50 + x * z, y: 340 - y))
+//            path.close()
+//            z += 1
+//        }
+//
+//        while l < count - 4 {
+//            path.move(to: CGPoint(x: 40 + x * l, y: 320 - y))
+//            path.addLine(to: CGPoint(x: 50 + x * l, y: 300 - y))
+//            path.addLine(to: CGPoint(x: 60 + x * l, y: 320 - y))
+//            path.close()
+//            l += 1
+//        }
+//
+//
+//
+//
+    while i <= count  {
+        k = j * x / 2
+        while j < count {
+            path.move(to: CGPoint(x: j * x - k, y: 400 - i * y))
+            path.addLine(to: CGPoint(x: 10 + j * x - k, y: 380 - i * y))
+            path.addLine(to: CGPoint(x: 20 + j * x - k, y: 400 - i * y))
+            path.close()
+            j += 1
+        }
+        i += 1
+        j = i - 1
+      }
+        let cgPath = path.cgPath
         let layer = CAShapeLayer()
         layer.path = cgPath
-        layer.fillColor = UIColor.blue.cgColor
+        layer.fillColor = UIColor.black.cgColor
         self.layer.addSublayer(layer)
     }
 }
 
+ 
+
 class ViewController: UIViewController {
+    @IBOutlet weak var textField: UITextField!
+    let triangle = TriangleView()
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let bubbleView = TailedBubbleView(frame: CGRect(x: 30, y: 80, width: 150, height: 80))
-        view.addSubview(bubbleView)
-
-        let reverseBubbleView = TailedBubbleView(frame: CGRect(x: 190, y: 180, width: 150, height: 80))
-        view.addSubview(reverseBubbleView)
-        reverseBubbleView.transform = CGAffineTransform(scaleX: -1, y: 1)
-
-        let triangleView = TriangleView(frame: CGRect(x: 0, y: 280, width: 200, height: 200))
-        view.addSubview(triangleView)
     }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        animation()
-    }
-
-    func animation() {
-//        UIView.animate(withDuration: 5) {
-//            self.view.backgroundColor = .green
-//        }
-
-//        UIView.animate(
-//            withDuration: 5,
-//            delay: 0,
-//            options: [ .repeat, .autoreverse ],
-//            animations: {
-//                self.view.backgroundColor = .green
-//            },
-//            completion: nil
-//        )
-
-        let basicAnimation = CABasicAnimation(keyPath: "backgroundColor")
-        basicAnimation.fromValue = UIColor.white.cgColor
-        basicAnimation.toValue = UIColor.green.cgColor
-        basicAnimation.autoreverses = true
-        basicAnimation.repeatCount = 5
-        basicAnimation.duration = 3
-        view.layer.add(basicAnimation, forKey: "backgroundColorChange")
+    @IBAction func drawTriangle(_ sender: Any) {
+        if let count = Int(textField.text ?? "5") {
+            triangle.setup(with: count)
+            view.addSubview(triangle)
+        }
     }
 }
 
