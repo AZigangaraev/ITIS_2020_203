@@ -15,17 +15,17 @@ class TriforceView: UIView {
         backgroundColor = .white
 
         let bezierPath = UIBezierPath()
-        bezierPath.usesEvenOddFillRule = true
-        let size = frame.size.height
-        let sizeTriangle = size / CGFloat(level)
+        let size = Double(frame.size.height) / Double(level)
+        
         for i in 1...level {
-            var x = (Double(size) / 2) - (Double(i - 1) * Double(sizeTriangle) / 2)
+            var x = ((Double(frame.size.height) / 2) - Double(i - 1) * size / 2)
             for _ in 1...i {
-                bezierPath.move(to: CGPoint(x: x, y: Double(i - 1) * Double(sizeTriangle)))
-                bezierPath.addLine(to: CGPoint(x: x - (Double(sizeTriangle) / 2), y: Double(i) * Double(sizeTriangle)))
-                bezierPath.addLine(to: CGPoint(x: x + (Double(sizeTriangle) / 2), y: Double(i) * Double(sizeTriangle)))
+                bezierPath.usesEvenOddFillRule = true
+                bezierPath.move(to: CGPoint(x: x, y: Double((i - 1)) * size))
+                bezierPath.addLine(to: CGPoint(x: x - (size / 2), y: Double(i) * size))
+                bezierPath.addLine(to: CGPoint(x: x + (size / 2), y: Double(i) * size))
                 bezierPath.close()
-                x = x + Double(sizeTriangle)
+                x = x + size
             }
         }
         let cgPath = bezierPath.cgPath
