@@ -7,169 +7,61 @@
 
 import UIKit
 
-class CustomView: UIView {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+struct Pixel {
+    let pixel: UInt32
 
-        setup()
-    }
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-
-        setup()
-    }
-
-    private func setup() {
-        backgroundColor = .yellow
-    }
-
-    override func draw(_ rect: CGRect) {
-        guard let context = UIGraphicsGetCurrentContext() else { return }
-
-        // (50;50), (100;100), (50;100)
-        context.move(to: CGPoint(x: 50, y: 50))
-        context.setStrokeColor(UIColor.black.cgColor)
-        context.setLineWidth(5)
-        context.addLine(to: CGPoint(x: 100, y: 100))
-        context.addLine(to: CGPoint(x: 50, y: 100))
-        context.closePath()
-        context.strokePath()
-    }
-}
-
-class CustomViewWithImageContext: UIView {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-
-        setup()
-    }
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-
-        setup()
-    }
-
-    private func setup() {
-        backgroundColor = .white
-
-        UIGraphicsBeginImageContextWithOptions(
-            CGSize(width: 200, height: 200),
-            false,
-            2
-        )
-
-        guard let context = UIGraphicsGetCurrentContext() else { return }
-
-        context.move(to: CGPoint(x: 10, y: 10))
-        context.setStrokeColor(UIColor.red.cgColor)
-        context.setLineWidth(5)
-        context.setFillColor(UIColor.yellow.cgColor)
-        context.addLine(to: CGPoint(x: 190, y: 190))
-        context.addLine(to: CGPoint(x: 10, y: 190))
-        context.closePath()
-        context.strokePath()
-        guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return }
-        addSubview(UIImageView(image: image))
-        UIGraphicsEndImageContext()
-    }
-}
-
-class TailedBubbleView: UIView {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-
-        setup()
-    }
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-
-        setup()
-    }
-
-    private func setup() {
-        backgroundColor = .clear
-    }
-
-    var radius: CGFloat = 16 {
-        didSet {
-            setNeedsDisplay()
-        }
-    }
-
-    override func draw(_ rect: CGRect) {
-        guard let context = UIGraphicsGetCurrentContext() else { return }
-
-        // Drawing bubble
-        context.move(to: CGPoint(x: 0, y: rect.maxY))
-        context.addArc(
-            center: CGPoint(x: 0, y: rect.maxY - radius),
-            radius: radius,
-            startAngle: .pi / 2,
-            endAngle: 0,
-            clockwise: true
-        )
-        context.addLine(to: CGPoint(x: radius, y: radius))
-        context.addArc(
-            center: CGPoint(x: 2 * radius, y: radius),
-            radius: radius,
-            startAngle: .pi,
-            endAngle: -.pi / 2,
-            clockwise: false
-        )
-        context.addLine(to: CGPoint(x: rect.maxX - radius, y: 0))
-        context.addArc(
-            center: CGPoint(x: rect.maxX - radius, y: radius),
-            radius: radius,
-            startAngle: -.pi / 2,
-            endAngle: 0,
-            clockwise: false
-        )
-        context.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY - radius))
-        context.addArc(
-            center: CGPoint(x: rect.maxX - radius, y: rect.maxY - radius),
-            radius: radius,
-            startAngle: 0,
-            endAngle: .pi / 2,
-            clockwise: false
-        )
-        context.closePath()
-
-        // Rendering
-        context.setFillColor(UIColor.lightGray.cgColor)
-        context.closePath()
-        context.fillPath()
-    }
 }
 
 class TriangleView: UIView {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    let levels: Int
 
+    init(frame: CGRect, levels: Int = 5) {
+        self.levels = levels
+
+        super.init(frame: frame)
         setup()
     }
 
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
+        self.levels = 5
 
+        super.init(coder: coder)
         setup()
     }
 
-    private func setup() {
-        backgroundColor = .yellow
+    var bezierPath = UIBezierPath()
 
-        let bezierPath = UIBezierPath()
-        bezierPath.usesEvenOddFillRule = true
-        // (50;50), (100;100), (50;100)
-        bezierPath.move(to: CGPoint(x: 50, y: 50))
-        bezierPath.addLine(to: CGPoint(x: 100, y: 100))
-        bezierPath.addLine(to: CGPoint(x: 50, y: 100))
-        bezierPath.close()
+    func setup() {
+        self.backgroundColor = .yellow
+        var bottomPoints = [CGPoint]()
 
-        let circlePath = UIBezierPath(ovalIn: CGRect(x: 50, y: 75, width: 25, height: 25))
-        bezierPath.append(circlePath.reversing())
+        for _ in 0..<levels {
+            if bottomPoints.isEmpty {
+                let HCenter = CGFloat(TriangleView.targetWidth) / (2.0)
+
+                bottomPoints.append(
+                    CGPoint(x: HCenter + triangleSide, y: triangleHeight))
+                bottomPoints.append(
+                    CGPoint(x: HCenter - triangleSide, y: triangleHeight))
+
+                bezierPath.move(to: CGPoint(x: CGFloat(HCenter), y: CGFloat(0)))
+
+                bezierPath.addLine(
+                    to: bottomPoints[0])
+                bezierPath.addLine(
+                    to: bottomPoints[1])
+            } else {
+                var newPoints = [CGPoint]()
+                bottomPoints.forEach {
+                    newPoints.append(
+                        contentsOf: self.drawEqualTriangle(in: bezierPath, start: $0)
+                    )
+                }
+                bottomPoints = newPoints
+            }
+
+            bezierPath.close()
+        }
 
         let cgPath = bezierPath.cgPath
         let layer = CAShapeLayer()
@@ -177,51 +69,121 @@ class TriangleView: UIView {
         layer.fillColor = UIColor.blue.cgColor
         self.layer.addSublayer(layer)
     }
+
+    private func drawEqualTriangle(in bezierPath: UIBezierPath, start: CGPoint) -> [CGPoint] {
+        bezierPath.move(to: start)
+
+        let bottomPoints = [
+            CGPoint(x: start.x + triangleSide, y: start.y + triangleHeight),
+            CGPoint(x: start.x - triangleSide, y: start.y + triangleHeight),
+        ]
+
+        bezierPath.addLine(
+            to: bottomPoints[0])
+        bezierPath.addLine(
+            to: bottomPoints[1])
+
+        return bottomPoints
+    }
+
+    private static let targetWidth: CGFloat = 200
+    private static let targetHeight: CGFloat = 200
+
+    private var triangleSide: CGFloat {
+        TriangleView.targetWidth / CGFloat(levels) / 2
+    }
+
+    private var triangleHeight: CGFloat {
+        (TriangleView.targetHeight / 2 * sqrt(3.0)) / CGFloat(levels)
+    }
+
+    public func suicide() {
+        self.removeFromSuperview()
+    }
+
+    static func topCenter(frame: CGRect) -> CGRect {
+        let XCorner = frame.width / 2.0 - targetWidth / 2.0
+        let YCorner = frame.height / 4.0 - targetHeight / 2.0
+
+        return CGRect(x: XCorner, y: YCorner, width: targetWidth, height: targetHeight)
+    }
+
+    static func bottomCenter(frame: CGRect) -> CGRect {
+        let XCorner = frame.width / 2.0 - targetWidth / 2.0
+        let YCorner = frame.height / 4.0 * 3.0 - targetHeight / 2.0
+
+        return CGRect(x: XCorner, y: YCorner, width: targetWidth, height: targetHeight)
+    }
 }
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
+
+    private var topTriangleView: TriangleView?
+    private var bottomTriangleView: TriangleView?
+
+    private var customLevels = 8
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let bubbleView = TailedBubbleView(frame: CGRect(x: 30, y: 80, width: 150, height: 80))
-        view.addSubview(bubbleView)
+        let topFrame = TriangleView.topCenter(frame: self.view.frame)
+        self.topTriangleView = TriangleView(frame: topFrame)
 
-        let reverseBubbleView = TailedBubbleView(frame: CGRect(x: 190, y: 180, width: 150, height: 80))
-        view.addSubview(reverseBubbleView)
-        reverseBubbleView.transform = CGAffineTransform(scaleX: -1, y: 1)
+        let bottomFrame = TriangleView.bottomCenter(frame: self.view.frame)
+        self.bottomTriangleView = TriangleView(frame: bottomFrame, levels: customLevels)
 
-        let triangleView = TriangleView(frame: CGRect(x: 0, y: 280, width: 200, height: 200))
-        view.addSubview(triangleView)
+        let mySlider = UISlider(frame: CGRect(x: 0, y: 0, width: 300, height: 20))
+        mySlider.minimumValue = 0
+        mySlider.maximumValue = 16
+        mySlider.addTarget(self, action: #selector(self.sliderValueDidChange(_:)), for: .valueChanged)
+        mySlider.center = self.view.center
+
+        let textfield = UITextField(frame: CGRect(x: 0, y: 0, width: 300, height: 20))
+        textfield.addTarget(self, action: #selector(self.textDidChange(_:)), for: .editingChanged)
+        textfield.center = CGPoint(x: self.view.center.x, y: self.view.center.y + 40)
+        textfield.backgroundColor = .lightGray
+        textfield.borderStyle = .roundedRect
+        textfield.delegate = self
+
+        if let topView = self.topTriangleView, let bottomView = self.bottomTriangleView {
+            view.addSubview(topView)
+            view.addSubview(bottomView)
+            view.addSubview(mySlider)
+            view.addSubview(textfield)
+        } else {
+            fatalError("Failed to initiate views")
+        }
+    }
+
+    @objc func sliderValueDidChange(_ sender: UISlider) {
+        let roundedStepValue = round(sender.value)
+        sender.value = roundedStepValue
+
+        self.recreateBottomTriangleView(level: Int(roundedStepValue))
+    }
+
+    @objc func textDidChange(_ sender: UITextField) {
+        guard let text = sender.text else {
+            return
+        }
+        
+        self.recreateBottomTriangleView(level: Int(text) ?? 1)
+    }
+    
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    func recreateBottomTriangleView(level: Int) {
+        bottomTriangleView?.suicide()
+
+        let bottomFrame = TriangleView.bottomCenter(frame: self.view.frame)
+        self.bottomTriangleView = TriangleView(frame: bottomFrame, levels: level)
+        view.addSubview(self.bottomTriangleView!)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
-        animation()
-    }
-
-    func animation() {
-//        UIView.animate(withDuration: 5) {
-//            self.view.backgroundColor = .green
-//        }
-
-//        UIView.animate(
-//            withDuration: 5,
-//            delay: 0,
-//            options: [ .repeat, .autoreverse ],
-//            animations: {
-//                self.view.backgroundColor = .green
-//            },
-//            completion: nil
-//        )
-
-        let basicAnimation = CABasicAnimation(keyPath: "backgroundColor")
-        basicAnimation.fromValue = UIColor.white.cgColor
-        basicAnimation.toValue = UIColor.green.cgColor
-        basicAnimation.autoreverses = true
-        basicAnimation.repeatCount = 5
-        basicAnimation.duration = 3
-        view.layer.add(basicAnimation, forKey: "backgroundColorChange")
     }
 }
-
